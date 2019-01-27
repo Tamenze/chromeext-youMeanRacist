@@ -5,12 +5,20 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse){
 
 		function replaceTextOnPage(){
 		  	getAllTextNodes().forEach(function(node){
-			  	if (node.nodeValue.toLowerCase().includes("racially charged") || 
-			  		node.nodeValue.includes("racially-charged"))
+					if 
+					(
+						node.nodeValue.toLowerCase().includes("racially charged") || 
+						node.nodeValue.includes("racially-charged") ||
+						node.nodeValue.toLowerCase().includes("racially tinged") ||
+						node.nodeValue.toLowerCase().includes("racially-tinged")
+					)
 			  	{
 			  		//replace and match case
 			  		node.nodeValue = node.nodeValue.replace(/racially charged|racially-charged/,'racist');
-			  		node.nodeValue = node.nodeValue.replace(/Racially Charged|Racially-Charged| Racially charged| Racially-charged/,'Racist');
+						node.nodeValue = node.nodeValue.replace(/Racially Charged|Racially-Charged| Racially charged| Racially-charged/,'Racist');
+						node.nodeValue = node.nodeValue.replace(/racially tinged|racially-tinged/, 'racist');
+						node.nodeValue = node.nodeValue.replace(/Racially Tinged|Racially-Tinged| Racially tinged| Racially-tinged/, 'Racist');
+
 					
 					//make and attach new text node structure with additional styled span
 					var index1 = (node.nodeValue.indexOf("racist") !== -1) ? node.nodeValue.indexOf("racist") : node.nodeValue.indexOf("Racist")
