@@ -87,7 +87,7 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse){
 					result.push(node);
 				})(document);
 
-				console.log(result);
+				// console.log(result);
 				return result;
 			}
 
