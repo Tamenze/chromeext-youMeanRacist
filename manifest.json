@@ -2,9 +2,8 @@
 	"manifest_version": 2,
 	"name": "You Mean Racist?",
 	"description": "Replace the phrase 'racially charged' with the more oft-accurate term 'racist.'",
-	"version": "1.0",
+	"version": "1.2",
 	"icons": {
-		// "credit": "The icons used in this extension were created on LogoMakr.com", 
 		"128":"icon128.png", 
 		"48": "icon48.png"
 	},
